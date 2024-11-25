@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
 		console.log("Both autoplay and loop are set to false.");
 		document.querySelector("#play").addEventListener("click", function() {
 			video.play()
-			document.querySelector("#volume").textContent = `Volume: ${Math.round(video.volume * 100)}%`;
+			document.querySelector("#volume").textContent = video.volume * 100 + "%";
         	console.log("Play Video");
 	});
 
@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
 
 	document.querySelector("#slider").addEventListener("input", function () {
         video.volume = this.value / 100; // Convert slider value (0-100) to 0-1
-        document.querySelector("#volume").textContent = `Volume: ${Math.round(video.volume * 100)}%`;
+        document.querySelector("#volume").textContent = video.volume * 100 + "%";
         console.log(`Volume is now ${Math.round(video.volume * 100)}%`);
     });
 
